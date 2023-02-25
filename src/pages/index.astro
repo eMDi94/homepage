@@ -1,5 +1,6 @@
 ---
 import BlogLayout from '../layouts/BlogLayout.astro';
+import Hero from '../components/Hero.astro';
 
 const content = {
   title: 'Home Page'
@@ -7,7 +8,8 @@ const content = {
 ---
 
 <BlogLayout content={content}>
-	<main>
-    <h1>Welcome to eMDi94 portfolio</h1>
-	</main>
+  <Hero />
+  <div class="rounded-lg bg-yellow-200 dark:bg-zinc-500 px-4 py-2 mt-6 text-center">
+    Hello everyone. I'm a software developer based in Reggio Emilia, Italy.
+  </div>
 </BlogLayout>
