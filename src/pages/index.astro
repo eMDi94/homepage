@@ -1,15 +1,29 @@
 ---
-import BlogLayout from '../layouts/BlogLayout.astro';
-import Hero from '../components/Hero.astro';
-
-const content = {
-  title: 'Home Page'
-}
+import Head from "../components/Head.astro";
+import Body from "../components/Body.astro";
+import Header from "../components/Header.astro";
+import Content from "../components/Content.astro";
+import Footer from "../components/Footer.astro";
+import Hero from "../components/Hero.astro";
+import WelcomeMessage from "../components/WelcomeMessage.astro";
+import AboutMe from "../components/AboutMe.astro";
+import { SITE_TITLE } from '../config';
 ---
 
-<BlogLayout content={content}>
-  <Hero />
-  <div class="rounded-lg bg-yellow-200 dark:bg-zinc-500 px-4 py-2 mt-6 text-center">
-    Hello everyone. I'm a software developer based in Reggio Emilia, Italy.
-  </div>
-</BlogLayout>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <Head title={SITE_TITLE} />
+	</head>
+	<Body>
+    <Header />
+    <Content className="pt-[64px]">
+      <Hero />
+      <WelcomeMessage />
+      <div class="flex flex-col gap-4 pt-4">
+        <AboutMe />
+      </div>
+    </Content>
+    <Footer />
+  </Body>
+</html>
