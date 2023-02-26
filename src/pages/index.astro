@@ -1,9 +1,5 @@
 ---
-import Head from "../components/Head.astro";
-import Body from "../components/Body.astro";
-import Header from "../components/Header.astro";
-import Content from "../components/Content.astro";
-import Footer from "../components/Footer.astro";
+import BlogLayout from "../layouts/BlogLayout.astro";
 import Hero from "../components/Hero.astro";
 import WelcomeMessage from "../components/WelcomeMessage.astro";
 import AboutMe from "../components/AboutMe.astro";
@@ -11,27 +7,16 @@ import Biography from "../components/Biography.astro";
 import Programming from "../components/Programming.astro";
 import Contacts from "../components/Contacts.astro";
 import Interests from "../components/Interests.astro";
-import { SITE_TITLE } from '../config';
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-    <Head title={SITE_TITLE} />
-	</head>
-	<Body>
-    <Header />
-    <Content className="pt-[64px]">
-      <Hero />
-      <WelcomeMessage />
-      <div class="flex flex-col gap-4 pt-4">
-        <AboutMe />
-        <Biography />
-        <Programming />
-        <Interests />
-        <Contacts />
-      </div>
-    </Content>
-    <Footer />
-  </Body>
-</html>
+<BlogLayout title="Home Page">
+  <Hero />
+  <WelcomeMessage />
+  <div class="flex flex-col gap-4 pt-4">
+    <AboutMe />
+    <Biography />
+    <Programming />
+    <Interests />
+    <Contacts />
+  </div>
+</BlogLayout>

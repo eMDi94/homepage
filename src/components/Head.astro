@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { SITE_TITLE } from '../config';
 
 export interface Props {
   title: string;
@@ -13,8 +14,8 @@ const { title } = Astro.props;
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <meta name="generator" content={Astro.generator} />
 
-<title>Marco Dalai - {title}</title>
-<meta name="title" content={`Marco Dalai - ${title}`} />
+<title>{SITE_TITLE} - {title}</title>
+<meta name="title" content={`${SITE_TITLE} - ${title}`} />
 <!-- <meta name="description" content={description} /> -->
 
 <script is:inline>
