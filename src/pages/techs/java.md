@@ -1,5 +1,5 @@
 ---
 title: Java Programming Language
 technology: Java
-page: java
+like: false
 ---

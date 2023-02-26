@@ -1,7 +1,7 @@
 ---
 import HeaderLink from './HeaderLink.astro';
 import { IoLogoGithub } from 'react-icons/io5/index.js';
-import { FaRobot } from 'react-icons/fa/index';
+import { FaRobot, FaMicrochip, FaHome } from 'react-icons/fa/index';
 import ThemeToggle from './ThemeToggleButton';
 ---
 
@@ -16,6 +16,14 @@ import ThemeToggle from './ThemeToggleButton';
       </a>
       <div class="flex-1"></div>
       <div class="items-center gap-6 hidden md:flex">
+        <HeaderLink href="/">
+          <FaHome />
+          Home
+        </HeaderLink>
+        <HeaderLink href="/techs">
+          <FaMicrochip />
+          Technologies
+        </HeaderLink>
         <HeaderLink
           href="https://github.com/eMDi94"
           target="_blank">

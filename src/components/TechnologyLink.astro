@@ -1,10 +1,16 @@
 ---
+import { FaHeart } from 'react-icons/fa/index';
+
 export interface Props {
   name: string;
   url: string;
+  like: boolean;
 }
 
-const { name, url } = Astro.props;
+const { name, url, like } = Astro.props;
 ---
 
-<a class="font-semibold hover:underline" href={url}>{name}</a>
+<li class="group">
+  {like ? <FaHeart className="w-5 inline-block text-red-600" /> : ''}
+  <a class="font-semibold hover:underline" href={url}>{name}</a>
+</li>
