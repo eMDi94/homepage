@@ -1,13 +1,20 @@
 ---
 import Section from "./Section.astro";
+import { FaGithub, FaInstagram } from 'react-icons/fa/index';
 ---
 
 <Section title="Contacts">
   <p class="font-semibold pt-2">
     Following are my contacts. Feel free to reach out to me if you feel like it.
   </p>
-  <ul class="list-disc list-inside space-y-1">
-    <li><span class="font-semibold">Email:</span> mdalai2394@gmail.com</li>
-    <li><span class="font-semibold">Github:</span> <a class="hover:underline" href="https://github.com/eMDi94">eMDi94</a></li>
+  <ul class="space-y-1">
+    <li class="group">
+      <FaGithub className="w-5 inline-block" />
+      <a class="hover:underline" href="https://github.com/eMDi94">eMDi94</a>
+    </li>
+    <li class="group">
+      <FaInstagram className="w-5 inline-block" />
+      <a class="hover:underline" href="https://instagram.com/ciamacco_">ciamacco_</a>
+    </li>
   </ul>
 </Section>
