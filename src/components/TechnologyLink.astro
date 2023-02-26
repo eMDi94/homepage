@@ -11,6 +11,6 @@ const { name, url, like } = Astro.props;
 ---
 
 <li class="group">
-  {like ? <FaHeart className="w-5 inline-block text-red-600" /> : ''}
   <a class="font-semibold hover:underline" href={url}>{name}</a>
+  {like && <FaHeart className="w-5 inline-block text-red-600" />}
 </li>
