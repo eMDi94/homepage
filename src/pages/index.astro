@@ -1,6 +1,5 @@
 ---
-import BlogLayout from "../layouts/BlogLayout.astro";
-import Hero from "../components/Hero.astro";
+import HeroLayout from "../layouts/HeroLayout.astro";
 import WelcomeMessage from "../components/WelcomeMessage.astro";
 import AboutMe from "../components/AboutMe.astro";
 import Biography from "../components/Biography.astro";
@@ -9,8 +8,7 @@ import Contacts from "../components/Contacts.astro";
 import Interests from "../components/Interests.astro";
 ---
 
-<BlogLayout title="Home Page">
-  <Hero />
+<HeroLayout title="Home Page">
   <WelcomeMessage />
   <div class="flex flex-col gap-4 pt-4">
     <AboutMe />
@@ -19,4 +17,4 @@ import Interests from "../components/Interests.astro";
     <Interests />
     <Contacts />
   </div>
-</BlogLayout>
+</HeroLayout>
