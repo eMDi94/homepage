@@ -18,7 +18,7 @@ const pathname = Astro.url.pathname;
     <Head title={title} />
   </head>
   <Body>
-    <Header client:load pathname={pathname} />
+    <Header client:only pathname={pathname} />
     <slot />
     <Footer />
   </Body>

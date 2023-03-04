@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import HeaderLink from './HeaderLink';
 import ThemeToggle from './ThemeToggleButton';
+import DropdownMenu from './DropdownMenu';
 import { IoLogoGithub } from 'react-icons/io5';
 import { FaHome, FaMicrochip, FaRobot } from 'react-icons/fa';
 
@@ -12,11 +13,29 @@ const Header = ({ pathname }: Props) => {
   const cleanedPathname = pathname.replace(/\/$/, '');
 
   const [scrolled, setScrolled] = useState(false);
+  const [yOffset, setYOffset] = useState(window.innerWidth <= 400 ? 10 : 400);
   const isHome = !cleanedPathname.length;
 
+  // Add window size listener
+  useEffect(() => {
+    const listener = () => {
+      if (window.innerWidth <= 400) {
+        setYOffset(10);
+      } else {
+        setYOffset(400);
+      }
+    }
+
+    window.addEventListener('resize', listener);
+    return () => window.removeEventListener('resize', listener);
+  }, [window.innerWidth]);
+
+  // Add scroll listener
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      window.addEventListener('scroll', () => setScrolled(window.scrollY > 400));
+      const listener = () => setScrolled(window.scrollY > yOffset);
+      window.addEventListener('scroll', listener);
+      return () => window.removeEventListener('scroll', listener);
     }
   }, []);
 
@@ -46,6 +65,7 @@ const Header = ({ pathname }: Props) => {
             </HeaderLink>
           </div>
           <ThemeToggle />
+          <DropdownMenu />
         </nav>
       </div>
     </header>
