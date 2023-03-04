@@ -5,10 +5,7 @@ import TechnologyLink from "../../components/TechnologyLink.astro";
 const posts = await Astro.glob('./*.md');
 ---
 
-<BlogLayout title="Technologies">
-  <p class="text-center text-3xl">
-    List of technologies I use and love
-  </p>
+<BlogLayout title="Technologies" pageTitle="List of technologies I use and love">
   <ul class="list-disc list-inside pt-5">
     {posts.map(post => <TechnologyLink name={post.frontmatter.title} like={post.frontmatter.like} url={post.url} />)}
   </ul>

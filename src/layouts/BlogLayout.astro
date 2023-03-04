@@ -1,16 +1,23 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
 import Content from "../components/Content.astro";
+import Hero from "../components/Hero.astro";
 
 export interface Props {
   title: string;
+  pageTitle: string;
 }
 
-const { title } = Astro.props;
+const { title, pageTitle } = Astro.props;
 ---
 
 <BaseLayout title={title}>
-  <Content className="pt-[64px]">
+  <Hero>
+    <div class="mx-auto max-w-2xl py-12">
+      <p class="text-5xl font-mplus font-semibold text-center">{pageTitle}</p>
+    </div>
+  </Hero>
+  <Content className="mb-auto flex w-full">
     <slot />
   </Content>
 </BaseLayout>

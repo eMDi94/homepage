@@ -40,7 +40,7 @@ const Header = ({ pathname }: Props) => {
   }, []);
 
   return (
-    <header className={`fixed w-full p-2 z-20 ${scrolled || !isHome ? 'bg-teal-400 dark:bg-violet-900' : 'bg-transparent'}`}>
+    <header className={`fixed w-full p-2 z-20 ${scrolled ? 'bg-teal-400 dark:bg-violet-900' : 'bg-transparent'}`}>
       <div className="mx-auto">
         <nav className="flex items-center gap-3 text-base">
           <a href="/" className="group">
