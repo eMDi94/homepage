@@ -1,11 +1,12 @@
 import { Fragment } from 'react';
 import { Menu, Transition } from '@headlessui/react';
 import { GiHamburgerMenu } from 'react-icons/gi';
-import { FaHome, FaMicrochip } from 'react-icons/fa';
+import { FaHome, FaMicrochip, FaGithub } from 'react-icons/fa';
 
 const links = [
   { href: '/', label: 'Home', icon: FaHome },
-  { href: '/techs', label: 'Technologies', icon: FaMicrochip }
+  { href: '/techs', label: 'Technologies', icon: FaMicrochip },
+  { href: 'https://github.com/eMDi94', label: 'GitHub', icon: FaGithub, target: '_blank' }
 ];
 
 const DropdownMenu = () => (
@@ -29,6 +30,7 @@ const DropdownMenu = () => (
               as="a"
               key={link.href}
               href={link.href}
+              target={link.target}
               className="px-4 py-2 text-zinc-900 font-semibold"
             >
               {link.icon && <link.icon />}

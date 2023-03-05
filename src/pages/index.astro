@@ -1,20 +1,30 @@
 ---
-import IndexLayout from "../layouts/IndexLayout.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import Content from "../components/Content.astro";
 import WelcomeMessage from "../components/WelcomeMessage.astro";
 import AboutMe from "../components/AboutMe.astro";
 import Biography from "../components/Biography.astro";
 import Programming from "../components/Programming.astro";
 import Contacts from "../components/Contacts.astro";
 import Interests from "../components/Interests.astro";
+import { Image } from '@astrojs/image/components';
+import heroImage from '../assets/hero.jpeg';
 ---
 
-<IndexLayout title="Home Page">
-  <WelcomeMessage />
-  <div class="flex flex-col gap-4 pt-4">
-    <AboutMe />
-    <Biography />
-    <Programming />
-    <Interests />
-    <Contacts />
-  </div>
-</IndexLayout>
+<BaseLayout title="Home Page">
+  <Hero>
+    <h1 class="text-6xl">Marco Dalai</h1>
+    <Image src={heroImage} alt="Missing image" width={400} height={300} class="rounded-lg hidden md:block" />
+  </Hero>
+  <Content>
+    <WelcomeMessage />
+    <div class="flex flex-col gap-4 pt-4">
+      <AboutMe />
+      <Biography />
+      <Programming />
+      <Interests />
+      <Contacts />
+    </div>
+  </Content>
+</BaseLayout>

@@ -1,10 +1,11 @@
+import { ReactNode } from 'react';
 import '../styles/HeaderLink.css';
 
 interface Props {
   className?: string;
   href: string;
   isActive?: boolean;
-  children: JSX.Element | (JSX.Element | string)[];
+  children: ReactNode;
   target?: string;
 }
 

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+import Hero from "../components/Hero.astro";
 import Content from "../components/Content.astro";
 import { FaHeart } from 'react-icons/fa/index';
 
@@ -7,17 +8,20 @@ const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout title={frontmatter.title}>
-  <main class="pt-[56px]">
-    <Content className="pt-6">
-      <h1 class="text-3xl font-mplus my-1 group">
-        {frontmatter.title}
-        {frontmatter.like && <FaHeart className="text-red-600 inline-block" />}
-      </h1>
-      <hr class="border-top border-zinc-400 my-4" />
-      <slot />
-      <span
-        class="underline underline-offset-2 hover:text-orange-500 decoration-orange-500 text-2xl"
-      ></span>
-    </Content>
-  </main>
+  <Hero>
+    <div class="mx-auto max-w-2xl py-12">
+      <p class="text-5xl font-mplus font-semibold text-center">{frontmatter.title}</p>
+    </div>
+  </Hero>
+  <Content className="mt-2 md:-mt-24">
+    <h1 class="text-3xl font-mplus my-1 group">
+      {frontmatter.title}
+      {frontmatter.like && <FaHeart className="text-red-600 inline-block" />}
+    </h1>
+    <hr class="border-top border-zinc-400 my-4" />
+    <slot />
+    <span
+      class="underline underline-offset-2 hover:text-orange-500 decoration-orange-500 text-2xl"
+    ></span>
+  </Content>
 </BaseLayout>
