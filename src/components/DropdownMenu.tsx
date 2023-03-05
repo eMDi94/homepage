@@ -2,10 +2,11 @@ import { Fragment } from 'react';
 import { Menu, Transition } from '@headlessui/react';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { FaHome, FaMicrochip, FaGithub } from 'react-icons/fa';
+import { basePath } from '../config';
 
 const links = [
-  { href: '/', label: 'Home', icon: FaHome },
-  { href: '/techs', label: 'Technologies', icon: FaMicrochip },
+  { href: basePath, label: 'Home', icon: FaHome },
+  { href: `${basePath}/techs`, label: 'Technologies', icon: FaMicrochip },
   { href: 'https://github.com/eMDi94', label: 'GitHub', icon: FaGithub, target: '_blank' }
 ];
 

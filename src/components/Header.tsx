@@ -4,6 +4,7 @@ import ThemeToggle from './ThemeToggleButton';
 import DropdownMenu from './DropdownMenu';
 import { IoLogoGithub } from 'react-icons/io5';
 import { FaHome, FaMicrochip, FaRobot } from 'react-icons/fa';
+import { basePath } from '../config';
 
 interface Props {
   pathname: string;
@@ -14,7 +15,7 @@ const Header = ({ pathname }: Props) => {
 
   const [scrolled, setScrolled] = useState(false);
   const [yOffset, setYOffset] = useState(window.innerWidth <= 400 ? 10 : 400);
-  const isHome = !cleanedPathname.length;
+  const isHome = cleanedPathname === basePath;
 
   // Add window size listener
   useEffect(() => {
@@ -51,11 +52,11 @@ const Header = ({ pathname }: Props) => {
           </a>
           <div className="flex-1" />
           <div className="items-center gap-6 hidden md:flex">
-            <HeaderLink href="/" isActive={isHome}>
+            <HeaderLink href={basePath} isActive={isHome}>
               <FaHome />
               Home
             </HeaderLink>
-            <HeaderLink href="/techs" isActive={cleanedPathname.includes('/techs')}>
+            <HeaderLink href={`${basePath}/techs`} isActive={cleanedPathname.includes('/techs')}>
               <FaMicrochip />
               Technologies
             </HeaderLink>
