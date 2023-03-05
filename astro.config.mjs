@@ -11,5 +11,7 @@ import image from "@astrojs/image";
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://eMDi94.github.io',
+  base: '/eMDi94-homepage',
   integrations: [tailwind(), react(), image()]
 });
