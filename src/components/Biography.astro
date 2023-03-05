@@ -1,14 +1,17 @@
 ---
 import Section from "./Section.astro";
+import Card from "./Card.astro";
 ---
 
-<Section title="Biography">
-  <ul class="pt-2 list-disc list-outside space-y-1 font-semibold">
-    <li>Born in 1994</li>
-    <li>2013: Graduated at the accountant school (with ICT address) "Istituto A. Manzoni", Suzzara (MN) with 100/100.</li>
-    <li>2016: Graduated magna cum laude in Software Engineering at the "Univesity Of Modena E Reggio Emilia" (3 years)</li>
-    <li>June 2017 - August 2017: Working at a familiar company in which I programmed PLC and industrial computers</li>
-    <li>September 2017 - ?: Major course in Software Engineering at the "University of Modena E Reggio Emilia"</li>
-    <li>October 2019 - Currently: Working at a software house based in Reggio Emilia</li>
-  </ul>
-</Section>
+<Card slot="item">
+  <Section title="Biography">
+    <ul class="pt-2 list-disc list-outside space-y-1 font-semibold">
+      <li>Born in 1994</li>
+      <li>2013: Graduated at the accountant school (with ICT address) "Istituto A. Manzoni", Suzzara (MN) with 100/100.</li>
+      <li>2016: Graduated magna cum laude in Software Engineering at the "Univesity Of Modena E Reggio Emilia" (3 years)</li>
+      <li>June 2017 - August 2017: Working at a familiar company in which I programmed PLC and industrial computers</li>
+      <li>September 2017 - ?: Major course in Software Engineering at the "University of Modena E Reggio Emilia"</li>
+      <li>October 2019 - Currently: Working at a software house based in Reggio Emilia</li>
+    </ul>
+  </Section>
+</Card>

@@ -10,6 +10,7 @@ import Contacts from "../components/Contacts.astro";
 import Interests from "../components/Interests.astro";
 import { Image } from '@astrojs/image/components';
 import heroImage from '../assets/hero.jpeg';
+import TransitionElement from "../components/transitions/TransitionElement";
 ---
 
 <BaseLayout title="Home Page">
@@ -19,12 +20,22 @@ import heroImage from '../assets/hero.jpeg';
   </Hero>
   <Content>
     <WelcomeMessage />
-    <div class="flex flex-col gap-4 pt-4">
-      <AboutMe />
-      <Biography />
-      <Programming />
-      <Interests />
-      <Contacts />
+    <div class="flex flex-col gap-10 pt-4">
+      <TransitionElement client:load>
+        <AboutMe slot="item" />
+      </TransitionElement>
+      <TransitionElement client:load left={false}>
+        <Biography slot="item" />
+      </TransitionElement>
+      <TransitionElement client:load>
+        <Programming slot="item" />
+      </TransitionElement>
+      <TransitionElement client:load left={false}>
+        <Interests slot="item" />
+      </TransitionElement>
+      <TransitionElement client:load>
+        <Contacts slot="item" />
+      </TransitionElement>
     </div>
   </Content>
 </BaseLayout>

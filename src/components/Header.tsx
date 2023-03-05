@@ -52,7 +52,7 @@ const Header = ({ pathname }: Props) => {
           </a>
           <div className="flex-1" />
           <div className="items-center gap-6 hidden md:flex">
-            <HeaderLink href={basePath} isActive={isHome}>
+            <HeaderLink href={`${basePath}/`} isActive={isHome}>
               <FaHome />
               Home
             </HeaderLink>
