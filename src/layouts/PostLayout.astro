@@ -17,7 +17,9 @@ const { frontmatter } = Astro.props;
     </div>
   </Hero>
   <Content className="mt-2 md:-mt-24">
-    <slot />
+    <p class="text-center">
+      <slot />
+    </p>
     <span
       class="underline underline-offset-2 hover:text-orange-500 decoration-orange-500 text-2xl"
     ></span>

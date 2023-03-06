@@ -2,7 +2,8 @@
 import BlogLayout from "../../layouts/BlogLayout.astro";
 import TechnologyLink from "../../components/TechnologyLink.astro";
 
-const posts = await Astro.glob('./*.md');
+let posts = await Astro.glob('./*.md');
+posts = posts.sort((a, b) => a.frontmatter.title.localeCompare(b.frontmatter.title));
 ---
 
 <BlogLayout title="Technologies" pageTitle="List of technologies I use and love">
