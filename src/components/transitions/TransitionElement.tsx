@@ -8,9 +8,9 @@ const TransitionElement = ({ item, left = true }) => (
         <Transition.Root show={inView}>
           <Transition.Child
             as="div"
-            enter="ease-in duration-[500ms] transition-all"
-            enterFrom={`opacity-0 ${left ? '-' : ''}translate-x-48`}
-            enterTo="opacity-100 translate-x-0"
+            enter="ease-in duration-[500ms] transition-all "
+            enterFrom="invisible translate-y-48"
+            enterTo="visible translate-y-0"
           >
             { item }
           </Transition.Child>
