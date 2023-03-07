@@ -44,7 +44,7 @@ const Header = ({ pathname }: Props) => {
     <header className={`fixed w-full p-2 z-20 ${scrolled ? 'bg-teal-400 dark:bg-violet-900' : 'bg-transparent'}`}>
       <div className="mx-auto">
         <nav className="flex items-center gap-3 text-base">
-          <a href="/" className="group">
+          <a href={`${basePath}/`} className="group">
             <h2 className="font-semibold tracking-tighter p-2 font-mplus text-lg">
               <FaRobot className="w-5 inline-block transition-transform group-hover:rotate-[20deg]" />
               Marco Dalai
