@@ -1,7 +1,12 @@
 import { Transition } from '@headlessui/react';
+import { ReactNode } from 'react';
 import { InView } from 'react-intersection-observer';
 
-const TransitionElement = ({ item, left = true }) => (
+interface Props {
+  item?: ReactNode
+}
+
+const TransitionElement = ({ item }: Props) => (
   <InView>
     {({ inView, ref }) =>
       <div ref={ref}>
