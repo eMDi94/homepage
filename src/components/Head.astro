@@ -1,0 +1,39 @@
+---
+import '../styles/global.css';
+import { SITE_TITLE } from '../config';
+import { basePath } from '../config';
+
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href={`${basePath}/favicon.svg`} />
+<meta name="generator" content={Astro.generator} />
+
+<title>{SITE_TITLE} - {title}</title>
+<meta name="title" content={`${SITE_TITLE} - ${title}`} />
+<!-- <meta name="description" content={description} /> -->
+
+<script is:inline>
+  import { DARK_THEME, LIGHT_THEME, THEME_KEY } from "../globals";
+
+  const theme = (() => {
+    if (typeof localStorage !== 'undefined' && localStorage.getItem(THEME_KEY)) {
+      return localStorage.getItem(THEME_KEY);
+    }
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      return DARK_THEME;
+    }
+    return LIGHT_THEME;
+  })()
+  if (theme === LIGHT_THEME) {
+    document.documentElement.classList.remove(DARK_THEME);
+  } else {
+    document.documentElement.classList.add(DARK_THEME);
+  }
+</script>
