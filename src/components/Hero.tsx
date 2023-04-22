@@ -19,8 +19,8 @@ const Hero = () => {
   const onIndexSelected = (idx: number) => setCurrentIdx(idx);
 
   return (
-    <div className="grid grid-cols-4 gap-4 w-1/2">
-      <div className="col-span-3">
+    <div className="flex flex-col md:grid md:grid-cols-4 md:gap-4 md:w-1/2">
+      <div className="max-w-sm md:max-w-none mx-auto md:mx-0 md:col-span-3">
         {heroItems.map((item, idx) => (
           <Transition
             appear={true}

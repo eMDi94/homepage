@@ -18,13 +18,15 @@ const DotLine = ({ numberOfTabs, onIndexSelected }: DotLineProps) => {
   };
 
   return (
-    <div className="flex flex-col items-center">
-      {indexes.map(idx => (
-        <>
-          <Dot selected={currentIdx === idx} onClick={() => onDotClick(idx)} />
-          {idx !== (numberOfTabs - 1) ? <Line /> : null}
-        </>
-      ))}
+    <div className="w-full justify-center mt-5 md:mt-0">
+      <div className="flex flex-row mx-auto w-3/12 md:w-full items-center md:flex-col justify-between md:justify-normal">
+        {indexes.map(idx => (
+          <>
+            <Dot selected={currentIdx === idx} onClick={() => onDotClick(idx)} />
+            {idx !== (numberOfTabs - 1) ? <Line /> : null}
+          </>
+        ))}
+      </div>
     </div>
   );
 }
@@ -49,7 +51,7 @@ const Dot = ({ selected, onClick }: DotProps) => {
 };
 
 const Line = () => (
-  <div className="flex flex-col items-center justify-center py-1">
+  <div className="hidden md:flex flex-col items-center justify-center py-1">
     <div className="w-1 h-12 bg-zinc-900 dark:bg-gray-50"></div>
   </div>
 );
