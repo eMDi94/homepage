@@ -10,7 +10,7 @@ const age = new Date(today.valueOf() - birthday.valueOf()).getFullYear() - 1970;
 const heroItems: HeroItemProps[] = [
   { title: "Hello. I'm Marco, a full-stack software developer and egineer", text: `I'm ${age} years old, and I live in Reggio Emilia.` },
   { title: 'I develop not only for work', text: 'Being a developer is not only my work, but also my passion. I really writing code' },
-  { title: 'Back-End first, Front-End for necessity', text: 'I define myself as full-stack developer, but I prefer developing on the back-end side of an application' }
+  { title: 'Back-End first, Front-End for necessity', text: 'I am a full-stack developer, but I prefer developing on the back-end side of an application' }
 ];
 
 const Hero = () => {
