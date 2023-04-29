@@ -9,7 +9,7 @@ import type { MenuItemLinkT } from './MenuItemLink';
 
 const links: MenuItemLinkT[] = [
   { type: 'link', href: basePath, label: 'Home', icon: <FaHome /> },
-  { type: 'moveToLink', elementId: 'technology', label: 'Techs', icon: <FaMicrochip /> },
+  { type: 'moveToLink', elementId: 'technologies', label: 'Techs', icon: <FaMicrochip /> },
   { type: 'moveToLink', elementId: 'projects', label: 'Projects', icon: <FaProjectDiagram /> },
   { type: 'link', href: 'https://github.com/eMDi94', label: 'GitHub', icon: <IoLogoGithub /> }
 ];
