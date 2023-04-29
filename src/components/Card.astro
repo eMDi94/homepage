@@ -1,0 +1,25 @@
+---
+import { Image } from '@astrojs/image/components';
+import type { OutputFormat } from '@astrojs/image/dist/loaders';
+
+export interface Props {
+  title?: string;
+  icon?: string;
+  iconClass?: string;
+  iconFormat?: OutputFormat;
+}
+
+const { title, icon, iconClass, iconFormat } = Astro.props;
+
+const finalIconClass = `w-12 h-12 rounded-md ${iconClass || ''}`;
+---
+
+<div class="rounded-md bg-teal-400 dark:bg-orange-700 px-4 py-2 h-full">
+  <div class="flex gap-2 items-center mb-2">
+    {icon && <Image class={finalIconClass} src={icon} format={iconFormat || 'svg'} alt="No Content" width={50} height={50} />}
+    {title && <div class="text-xl underline">{title}</div>}
+  </div>
+  <div class="text-justify font-bold font-mono">
+    <slot />
+  </div>
+</div>

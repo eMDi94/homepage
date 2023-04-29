@@ -1,0 +1,19 @@
+---
+import Card from './Card.astro';
+
+let technologies = await Astro.glob('../pages/technologies/*.md');
+technologies.sort((a, b) => a.frontmatter.sortOrder - b.frontmatter.sortOrder);
+---
+
+<div class="w-full flex flex-col">
+  <p class="text-3xl underline">
+    Technologies
+  </p>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-2">
+    {technologies.map(tech => (
+      <Card title={tech.frontmatter.title} icon={tech.frontmatter.icon} iconClass={tech.frontmatter.iconClass} iconFormat={tech.frontmatter.iconFormat}>
+        {tech.rawContent}
+      </Card>)
+    )}
+  </div>
+</div>

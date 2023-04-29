@@ -1,10 +1,14 @@
 ---
 import IndexLayout from '../layouts/IndexLayout.astro';
 import Hero from '../components/Hero';
+import Technologies from '../components/Technologies.astro';
 ---
 
 <IndexLayout title="Marco Dalai">
   <div class="flex flex-row items-center justify-center pt-20">
     <Hero client:only />
+  </div>
+  <div class="w-full px-2 md:max-w-6xl md:mx-auto">
+    <Technologies />
   </div>
 </IndexLayout>
