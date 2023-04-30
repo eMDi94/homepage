@@ -8,9 +8,9 @@ import { basePath } from '../config';
 import type { MenuItemLinkT } from './MenuItemLink';
 
 const links: MenuItemLinkT[] = [
-  { type: 'link', href: basePath, label: 'Home', icon: <FaHome /> },
-  { type: 'moveToLink', elementId: 'technologies', label: 'Techs', icon: <FaMicrochip /> },
+  { type: 'link', href: `${basePath}/`, label: 'Home', icon: <FaHome /> },
   { type: 'moveToLink', elementId: 'projects', label: 'Projects', icon: <FaProjectDiagram /> },
+  { type: 'moveToLink', elementId: 'technologies', label: 'Techs', icon: <FaMicrochip /> },
   { type: 'link', href: 'https://github.com/eMDi94', label: 'GitHub', icon: <IoLogoGithub /> }
 ];
 

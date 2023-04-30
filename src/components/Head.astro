@@ -32,7 +32,7 @@ const { title } = Astro.props;
     return LIGHT_THEME;
   })()
   if (theme === LIGHT_THEME) {
-    document.documentElement.classList.remove(DARK_THEME);
+    document.documentElement.classList.add(DARK_THEME);
   } else {
     document.documentElement.classList.add(DARK_THEME);
   }

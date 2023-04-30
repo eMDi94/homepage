@@ -1,0 +1,19 @@
+---
+import ProjectCard from './projects/ProjectCard.astro';
+
+let projects = await Astro.glob('./projects/*.md');
+projects = projects.sort((a, b) => a.frontmatter.sortOrder - b.frontmatter.sortOrder);
+---
+
+<div class="w-full flex flex-col">
+  <p class="text-3xl underline">
+    Projects
+  </p>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-2">
+    {projects.map(project => (
+      <ProjectCard image={project.frontmatter.image} imageFormat={project.frontmatter.imageFormat} title={project.frontmatter.title}>
+        {project.rawContent}
+      </ProjectCard>
+    ))}
+  </div>
+</div>

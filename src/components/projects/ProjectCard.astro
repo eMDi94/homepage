@@ -1,0 +1,20 @@
+---
+import { Image } from '@astrojs/image/components';
+import type { OutputFormat } from '@astrojs/image/dist/loaders';
+
+export interface Props {
+  title: string;
+  image: string;
+  imageFormat: OutputFormat;
+}
+
+const { title, image, imageFormat } = Astro.props;
+---
+
+<div class="rounded-md bg-teal-400 dark:bg-orange-700 h-full">
+  <Image class="w-full h-2/6 bg-white rounded-t-md" src={image} width={1000} height={1000} format={imageFormat} alt="No Content" />
+  <div class="text-justify font-bold font-mono pt-2 px-4">
+    <p class="text-xl underline mb-2">{title}</p>
+    <slot />
+  </div>
+</div>

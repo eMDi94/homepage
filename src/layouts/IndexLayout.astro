@@ -18,7 +18,9 @@ const { title } = Astro.props;
   </head>
   <Body>
     <Header client:only />
-    <slot />
+    <div class="flex flex-col gap-5">
+      <slot />
+    </div>
     <Footer />
   </Body>
 </html>

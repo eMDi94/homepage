@@ -1,7 +1,7 @@
 ---
-import Card from './Card.astro';
+import Card from './technologies/TechnologyCard.astro';
 
-let technologies = await Astro.glob('../pages/technologies/*.md');
+let technologies = await Astro.glob('./technologies/*.md');
 technologies.sort((a, b) => a.frontmatter.sortOrder - b.frontmatter.sortOrder);
 ---
 
