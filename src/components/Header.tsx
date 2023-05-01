@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import HeaderLink from './HeaderLink';
 import ThemeToggle from './ThemeToggleButton';
 import DropdownMenu from './DropdownMenu';
-import { IoLogoGithub } from 'react-icons/io5';
-import { FaHome, FaMicrochip, FaRobot, FaProjectDiagram } from 'react-icons/fa';
+import { IoLogoGithub, IoDocumentText } from 'react-icons/io5';
+import { FaHome, FaMicrochip, FaRobot, FaProjectDiagram,  } from 'react-icons/fa';
 import { basePath } from '../config';
 import type { MenuItemLinkT } from './MenuItemLink';
 
@@ -11,6 +11,10 @@ const links: MenuItemLinkT[] = [
   { type: 'link', href: `${basePath}/`, label: 'Home', icon: <FaHome /> },
   { type: 'moveToLink', elementId: 'projects', label: 'Projects', icon: <FaProjectDiagram /> },
   { type: 'moveToLink', elementId: 'technologies', label: 'Techs', icon: <FaMicrochip /> },
+  { type: 'dropdownLinks', label: 'Curriculum Vitae', icon: <IoDocumentText />, items: [ 
+    { type: 'link', href: `${basePath}/cv/italian-cv.pdf`, label: 'Italian CV', target: '_blank', icon: <IoDocumentText /> },
+    { type: 'link', href: `${basePath}/cv/english-cv.pdf`, label: 'English CV', target: '_blank', icon: <IoDocumentText /> } 
+  ] },
   { type: 'link', href: 'https://github.com/eMDi94', label: 'GitHub', icon: <IoLogoGithub /> }
 ];
 
