@@ -1,5 +1,5 @@
 ---
-title: PlanningOfDeliveries
+title: Planning Of Deliveries
 image: /projects/planning-of-deliveries.jpeg
 imageFormat: jpeg
 sortOrder: 4
