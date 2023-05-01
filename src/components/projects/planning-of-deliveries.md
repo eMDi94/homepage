@@ -1,5 +1,5 @@
 ---
-title: Track&Trace
+title: PlanningOfDeliveries
 image: /projects/planning-of-deliveries.jpeg
 imageFormat: jpeg
 sortOrder: 4
