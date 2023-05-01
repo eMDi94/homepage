@@ -5,7 +5,7 @@ let technologies = await Astro.glob('./technologies/*.md');
 technologies.sort((a, b) => a.frontmatter.sortOrder - b.frontmatter.sortOrder);
 ---
 
-<div class="w-full flex flex-col">
+<div class="w-full flex flex-col mt-5">
   <p class="text-3xl underline">
     Technologies
   </p>
